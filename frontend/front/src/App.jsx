@@ -5,7 +5,9 @@ import { useState,useEffect } from "react";
 import axios from "axios"
 
 function App(){
-  const API="http://127.0.0.1:8000/student/"
+  // const API="http://127.0.0.1:8000/student/"
+  const API = import.meta.env.VITE_API_URL;
+  const API="https://dummy-for-study.onrender.com/student/"
   const[user,SetUser]=useState([])
   const [form,SetForm]=useState({name:"",age:"",email:""})
   const[edit,SetEdit]=useState(null);
