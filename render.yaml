@@ -5,10 +5,10 @@ services:
     region: oregon
     branch: main
     plan: starter
-    root: backend
+    root: backend/project
     pythonVersion: "3.11"
     buildCommand: |
-      pip install -r requirements.txt
+      pip install -r ../requirements.txt
       python manage.py collectstatic --noinput
     startCommand: gunicorn project.wsgi
     envVars:
