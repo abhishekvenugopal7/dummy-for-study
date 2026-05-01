@@ -5,12 +5,12 @@ services:
     region: oregon
     branch: main
     plan: starter
-    root: backend/project
+    root: backend
     pythonVersion: "3.11"
     buildCommand: |
-      pip install -r ../requirements.txt
-      python manage.py collectstatic --noinput
-    startCommand: gunicorn project.wsgi
+      pip install -r requirements.txt
+      cd project && python manage.py collectstatic --noinput
+    startCommand: cd project && gunicorn project.wsgi
     envVars:
       - key: DJANGO_DEBUG
         value: "False"
