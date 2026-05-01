@@ -1,0 +1,10 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Student</button>
+</form>
+{% for student in students %}
+    <p>{{ student.name }} - {{ student.age }} - {{ student.email }}</p>
+    <a href="{% url 'delete' student.id %}">Delete</a>
+    <a href="{% url 'update' student.id %}">Update</a>
+{% endfor %}
