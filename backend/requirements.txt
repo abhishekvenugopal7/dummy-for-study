@@ -8,3 +8,5 @@ packaging==26.2
 PyJWT==2.12.1
 sqlparse==0.5.5
 tzdata==2026.1
+dj-database-url==1.0.0
+whitenoise==8.1.0
