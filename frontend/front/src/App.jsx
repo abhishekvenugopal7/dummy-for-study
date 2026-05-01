@@ -23,7 +23,7 @@ function App(){
       url=`?name=${search}`
     }
     const res=await axios.get(`${API}${url}`)
-    SetUser(res.data);
+    SetUser(res.data.results);
 
   }
 
